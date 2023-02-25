@@ -8,12 +8,17 @@
       />
       <button type="submit">Adicionar</button>
     </form>
+    <Item :lista="tarefas"/>
   </div>
 </template>
 
 <script>
+import Item from './Item';
 export default {
   name: 'Task-Component',
+  components:{
+    Item,
+  },
   data(){
     return{
       tarefa: '',
