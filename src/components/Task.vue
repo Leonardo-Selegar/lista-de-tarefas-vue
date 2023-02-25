@@ -1,6 +1,12 @@
 <template>
   <div id="task">
-    <h1>Componente Task</h1>
+    <form>
+      <input 
+        type="text" 
+        placeholder="Tarefa de hoje"
+      />
+      <button type="submit">Adicionar</button>
+    </form>
   </div>
 </template>
 
@@ -10,5 +16,4 @@ export default {
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped>@import '../styles/task.css';</style>
