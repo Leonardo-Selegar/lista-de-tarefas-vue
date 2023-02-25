@@ -9,7 +9,9 @@
       <button type="submit">Adicionar</button>
     </form>
     <Item :lista="tarefas" @remove="tarefas = $event"/>
-
+    <span v-show="tarefas.length > 0">
+      Você tem <strong :class="{pend: pendente}">{{ tarefas.length }}</strong> tarefas pendentes
+    </span>
   </div>
 </template>
 
@@ -26,6 +28,7 @@ export default {
       tarefas: [],
       key: 0,
       removeKey: 0,
+      pendente: false
     }
   },
   methods:{
@@ -49,7 +52,7 @@ export default {
       deep: true,
       handler(){
         localStorage.setItem('tasks', JSON.stringify(this.tarefas));
-        console.log('Salvou no local');
+        this.tarefas.length > 4 ? this.pendente = true : this.pendente = false;
       }
     }
   },

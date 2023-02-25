@@ -5,7 +5,6 @@
         <span>{{task.text}}</span>
         <button @click="deleteItem(task.key)">Concluir</button>
       </li>
-
     </ul>
   </div>
 </template>
