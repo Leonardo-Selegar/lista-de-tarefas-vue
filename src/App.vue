@@ -15,6 +15,4 @@ export default {
 }
 </script>
 
-<style scoped>
-  @import './styles/app.css';
-</style>
+<style scoped>@import './styles/app.css';</style>
