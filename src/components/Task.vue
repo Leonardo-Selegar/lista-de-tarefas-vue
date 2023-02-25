@@ -8,7 +8,7 @@
       />
       <button type="submit">Adicionar</button>
     </form>
-    <Item :lista="tarefas"/>
+    <Item :lista="tarefas" @remove="tarefas = $event"/>
   </div>
 </template>
 
@@ -24,6 +24,7 @@ export default {
       tarefa: '',
       tarefas: [],
       key: 0,
+      removeKey: 0,
     }
   },
   methods:{
@@ -40,9 +41,8 @@ export default {
         return;
       }
       this.tarefa = '';
-      console.log(this.tarefas);
     }
-  }
+  },
 }
 </script>
 
