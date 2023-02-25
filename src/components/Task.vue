@@ -9,6 +9,7 @@
       <button type="submit">Adicionar</button>
     </form>
     <Item :lista="tarefas" @remove="tarefas = $event"/>
+
   </div>
 </template>
 
@@ -43,6 +44,19 @@ export default {
       this.tarefa = '';
     }
   },
+  watch:{
+    tarefas:{
+      deep: true,
+      handler(){
+        localStorage.setItem('tasks', JSON.stringify(this.tarefas));
+        console.log('Salvou no local');
+      }
+    }
+  },
+  created(){ //chamado apos a instancia do vue ser criada
+    const json = localStorage.getItem('tasks');
+    this.tarefas = JSON.parse(json) || [];
+  }
 }
 </script>
 
